@@ -17,17 +17,17 @@
                 <div
                     class="cursor-pointer flex items-center justify-center w-7 h-7 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800"
                 >
-                    <Icon type="dots-vertical" width="16" height="16" />
+                    <Icon name="ellipsis-vertical" type="outline" class="w-4 h-4" />
                 </div>
             </template>
 
             <DropdownMenu @click.prevent.stop="showRename">
-                <Icon type="pencil" class="mr-2" width="16" height="16" />
+                <Icon name="pencil" type="outline" class="mr-2 w-4 h-4" />
                 {{ __("Rename") }}
             </DropdownMenu>
 
             <DropdownMenu class="text-red-500" @click.prevent.stop="showDelete">
-                <Icon type="trash" class="mr-2" width="16" height="16" />
+                <Icon name="trash" type="outline" class="mr-2 w-4 h-4" />
                 {{ __("Delete") }}
             </DropdownMenu>
         </Dropdown>
@@ -35,6 +35,7 @@
 </template>
 
 <script setup>
+import { Icon } from "laravel-nova-ui";
 import { DELETE_STATE, MODALS } from "../constants";
 import { mimeIcons } from "../helpers/mime-icons";
 import truncate from "../helpers/truncate";

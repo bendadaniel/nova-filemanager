@@ -51,12 +51,13 @@ export default defineConfig({
         },
         rollupOptions: {
             input: currentConfig.entry,
-            external: ["vue", "laravel-nova"],
+            external: ["vue", "laravel-nova", "laravel-nova-ui"],
             output: {
                 globals: {
                     vue: "Vue",
                     nova: "Nova",
-                    "laravel-nova": "LaravelNova"
+                    "laravel-nova": "LaravelNova",
+                    "laravel-nova-ui": "LaravelNovaUi"
                 },
                 assetFileNames: "css/tool.css"
             }

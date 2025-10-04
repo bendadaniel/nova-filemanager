@@ -52,9 +52,9 @@ class ToolController extends Controller
                 ttl: (int) CarbonInterval::days(config('nova-file-manager.update_checker.ttl_in_days'))->totalSeconds,
                 callback: function () {
                     $current = InstalledVersions::getPrettyVersion(
-                        packageName: 'stepanenko3/nova-filemanager',
+                        packageName: 'bendadaniel/nova-filemanager',
                     );
-                    $latest = Http::get('https://api.github.com/repos/stepanenko3/nova-filemanager/releases/latest')
+                    $latest = Http::get('https://api.github.com/repos/bendadaniel/nova-filemanager/releases/latest')
                         ->json('tag_name');
 
                     return version_compare($current, $latest, '<');

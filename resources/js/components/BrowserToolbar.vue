@@ -16,7 +16,7 @@
                 @change="changeFile"
             />
 
-            <Icon type="upload" width="16" height="16" />
+            <Icon name="arrow-up-tray" type="outline" class="w-4 h-4" />
         </label>
 
         <ToolbarButton
@@ -145,6 +145,7 @@
 
 <script setup>
 import _ from "lodash";
+import { Icon } from "laravel-nova-ui";
 import SelectControl from "./Elements/SelectControl.vue";
 import ToolbarButton from "./ToolbarButton.vue";
 import useBrowserStore from "../stores/browser.ts";

@@ -8,12 +8,17 @@
         }"
     >
         <slot />
-        <Icon v-if="type" :type="type" width="16" height="16" />
+        <Icon v-if="iconName" :name="iconName" type="outline" class="w-4 h-4" />
     </button>
 </template>
 
 <script>
+    import { Icon } from "laravel-nova-ui";
+
     export default {
+        components: {
+            Icon,
+        },
         props: {
             type: {
                 type: String,
@@ -24,5 +29,18 @@
                 default: false,
             },
         },
+        computed: {
+            iconName() {
+                const iconMap = {
+                    'upload': 'arrow-up-tray',
+                    'refresh': 'arrow-path',
+                    'filter': 'funnel',
+                    'folder-add': 'folder-plus',
+                    'trash': 'trash',
+                    'check': 'check',
+                };
+                return this.type ? iconMap[this.type] || this.type : null;
+            }
+        }
     }
 </script>
