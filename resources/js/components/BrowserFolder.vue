@@ -5,7 +5,7 @@
         @click="clickStrategy"
     >
         <div class="h-8 w-8 mr-1 flex items-center justify-center group-hover:opacity-75">
-            <Icon :type="mimeIcons.dir" width="16" height="16" />
+            <Icon :name="mimeIcons.dir" type="solid" width="16" height="16" />
         </div>
 
         <p class="truncate group-hover:opacity-75">

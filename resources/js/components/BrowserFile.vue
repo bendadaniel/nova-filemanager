@@ -15,21 +15,21 @@
                 v-if="isSelected"
                 class="absolute top-0 right-0 p-2 text-primary-500"
             >
-                <Icon
-                    type="check-circle"
-                    width="22"
-                    height="22"
-                    :solid="true"
-                />
+            <Icon
+                name="check-circle"
+                type="solid"
+                width="22"
+                height="22"
+            />
             </div>
 
             <Icon
                 class="text-gray-500"
                 v-if="file.type != 'image'"
-                :type="mimeIcons[file.type] || mimeIcons.text"
+                :name="mimeIcons[file.type] || mimeIcons.text"
+                type="solid"
                 width="48"
                 height="48"
-                :solid="true"
             />
 
             <img
